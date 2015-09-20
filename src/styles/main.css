@@ -1,34 +1,26 @@
-/* Stiziles */
-
-html, body {
-  background: #222222;
+html {
+  box-sizing: border-box;
+  background: #000;
+}
+html *, html *:before, html *:after {
+  box-sizing: inherit;
+}
+.inverted {
+   -webkit-filter: invert(1);
+   filter: invert(1);
 }
 
-/* main */
-
-.main {
+img {
   width: 100%;
-  height: 100%;
-  background: #222222;
-  color: #fff;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-/* transitions */
-
-.fade-enter {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
+main > div {
+  width: 100%;
 }
 
-.fade-enter.fade-enter-active {
-  opacity: 1;
-}
-
-.fade-leave {
-  opacity: 1;
-  transition: opacity .5s ease-in;
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
+#weather {
+  float: right;
 }
