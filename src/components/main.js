@@ -5,7 +5,14 @@ var React = require('react');
 var Router = require('react-router');
 var Route = Router.Route;
 
-var content = document.getElementById('content');
+
+require('../images/weather-icons.css');
+var icons = require('html!../images/weather-icons.html');
+icons = 'fart';
+
+var weatherIcons = document.getElementById('weather-icons');
+weatherIcons.innerHtml = icons;
+
 
 var Routes = (
   <Route handler={SrcApp}>
@@ -13,6 +20,7 @@ var Routes = (
   </Route>
 );
 
+var content = document.getElementById('content');
 Router.run(Routes, function (Handler) {
   React.render(<Handler/>, content);
 });

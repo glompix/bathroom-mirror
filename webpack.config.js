@@ -56,6 +56,9 @@ module.exports = {
     }, {
       test: /\.(png|jpg|woff|woff2)$/,
       loader: 'url-loader?limit=8192'
+    }, {
+      test: /\.html$/,
+      loader: 'raw!html-minify'
     }]
   },
 
