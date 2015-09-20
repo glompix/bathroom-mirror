@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-  - "0.12.4"
+- 0.12.4
 script: bash ./deploy.sh
 env:
   global:
   - GH_REF: github.com/glompix/bathroom-mirror-dist.git
-  - secure: "<.... encrypted data from above ....>"
+  - secure: AG40rXsNAEAxdm//Q26rHM3zT4sEftlUiNdf9Cwzwd8/wwYT11AfjUAK51f6Snh4DO/rApKMpL/z73UIcPbPcEpLPMliDTjUszirer3M+IBlI6NgPc9E+4LzvJF9THssL5EPqbWzTXZoIitVr3u9hbnwRyEBPFZENhG/t5Wp2HrkG36wcGVmayEG/NZwdiep2GeqDyzEIwiqSnRXy3335uiYgB9lqgfzObOltE5jmu3K9jaZP4bB5QUvdYA2WRv5rVgslcagrqmA+LipypBuloAjTkXawQYFfPJe1ZrUxrhkOPxVZzXx8G1BXlL9ja+/USDwiTIVHClDRq0u1NZjSqwYlknGMFhqBPF78L8LLhXp2yVxe/Wgip4DPZkgVA6KRroilLm13wr+TJFJFRPvQcXGRkGhkcM0HvqUyt6rnsKkxFKe/hdhCT5qMFygj5hhOsw6nrPwLXUTyzBj1PLshMuQKTLgIkJlAy/UJEstXMPceMXVPe5l9ZtrTqNOrRDi6gi0qJx4bfFOG3DguHcuEVYTi5wqgoeNlLCj+Me7j9VhLkpwQmFui7dKvLHEbHptcDclIbvKFYpvdkqEuP2dMKsnO1ngquIeMXx1dnWv5+pC5JwlKfC0E11XotV6hifzVJYLb2VU1dYu+ECvpsk551yceOQzXmnYCL7s9Wv1FXI=
