@@ -13,6 +13,8 @@ grunt build
 cd dist
 git init
 
+echo "{\"build-number\": \"$((TRAVIS_JOB_ID-1))\"}" > buildinfo.json
+
 # inside this git repo we'll pretend to be a new user
 git config user.name "Travis CI"
 git config user.email "glompix@gmail.com"
