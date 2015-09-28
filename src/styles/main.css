@@ -1,7 +1,14 @@
 html {
   box-sizing: border-box;
   background: #000;
+  font-family: Roboto, Arial;
+  font-weight: 700;
 }
+
+body {
+  color: #fff;
+}
+
 html *, html *:before, html *:after {
   box-sizing: inherit;
 }
@@ -21,6 +28,11 @@ main > div {
   width: 100%;
 }
 
+.hour-minute { font-size: 96px;; font-weight: 900; }
+.second, .ampm { font-size: 48px; padding-left: 8px; }
+.second { position: relative; top: -48px; }
+.ampm { position: relative; left: -36px; }
+.weekday {}
 #weather {
   float: right;
 }
