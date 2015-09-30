@@ -28,10 +28,11 @@ main > div {
   width: 100%;
 }
 
+/* DATETIME */
 .hour-minute { font-size: 96px;; font-weight: 900; }
 .second, .ampm { font-size: 48px; padding-left: 8px; }
 .second { position: relative; top: -48px; }
-.ampm { position: relative; left: -36px; }
+.ampm { position: relative; left: -48px; }
 .weekday {}
 #weather {
   float: right;
