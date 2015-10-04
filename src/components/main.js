@@ -13,7 +13,5 @@ var Routes = (
 
 var content = document.getElementById('content');
 Router.run(Routes, function (Handler) {
-  React.render(<Handler/>, content, function () {
-    $('p').fitText(1.0);
-  });
+  React.render(<Handler/>, content);
 });

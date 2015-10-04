@@ -1,6 +1,24 @@
 'use strict';
 var React = require('react');
 var moment = require('moment');
+var lodash = require('lodash');
+
+var updateFontSizes = lodash.throttle(function () {
+  $('#datetime p').each(function () {
+    var $t = $(this);
+    var fontSize = parseInt($t.css('font-size')) || $t.height();
+    $t.css('font-size', fontSize);
+    var heightDelta = -1;
+    while (heightDelta !== 0) {
+      var oldHeight = $t.height();
+      fontSize = Math.min(fontSize - 1, 1000);
+      $t.css('font-size', fontSize);
+      var newHeight = $t.height();
+      heightDelta = oldHeight - newHeight;
+      console.log('DEBUG ' + $t.attr('class'), oldHeight, newHeight, heightDelta, fontSize);
+    }
+  });
+}, 200);
 
 var DateTime = React.createClass({
   getInitialState: function() {
@@ -8,6 +26,9 @@ var DateTime = React.createClass({
   },
   componentDidMount: function() {
     this.start();
+  },
+  componentDidUpdate: function() {
+    updateFontSizes();
   },
   start: function() {
     var self = this;
@@ -19,11 +40,11 @@ var DateTime = React.createClass({
   render: function() {
     var t = this.state.t;
     return (
-      <div>
+      <div id="datetime">
         <div id="time">
           <p className="hour-minute">{t.format('h:mm')}</p>
           <p className="second">{t.format('ss')}</p>
-          <p className="ampm">{t.format('a')}</p>
+          <p className="ampm">{t.format('A')}</p>
         </div>
         <div id="date">
           <p>{t.format('dddd, MMMM Do YYYY')}</p>

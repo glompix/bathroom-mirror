@@ -28,7 +28,11 @@ main > div {
   width: 100%;
 }
 
-p { margin: 0; padding: 0; }
+p, li, ul { margin: 0; padding: 0; max-width: 100%; }
+li { list-style: none; }
+
+/* GENERIC */
+.text-right { text-align: right; }
 
 /* BLOCKS */
 .block (@x, @y, @w, @h) {
@@ -44,13 +48,19 @@ p { margin: 0; padding: 0; }
   .second { .block(36%, 0, 9%, 13%); }
   .ampm { .block(36%, 13%, 9%, 7%); }
 }
-.second { position: relative; top: -48px; }
-.ampm { position: relative; left: -48px; }
 #date { .block(0, 20%, 45%, 6%); background: #0f0; }
 
 /* WEATHER */
 #weather {
-  .current-icon { .block(45%, 0, 15%, 26%); background: #0f0; }
-  .current-temp { .block(60%, 0, 15%, 14%); background: #0ff; }
-  .current-summary { .block(60%, 20%, 40%, 6%); background: #00f; }
+  .current-icon {
+    .block(45%, 0, 15%, 26%);
+
+    canvas {
+      width: 275%;
+      margin: -15% -87% 0;
+    }
+   }
+  .current-temp { .block(60%, 0, 15%, 14%); }
+  .rolling-stats { .block(60%, 14%, 40%, 6%); background: #0ff; }
+  .rolling-summary { .block(60%, 20%, 40%, 6%); background: #00f; }
 }
