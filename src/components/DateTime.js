@@ -19,17 +19,14 @@ var DateTime = React.createClass({
   render: function() {
     var t = this.state.t;
     return (
-      <div id="datetime">
-        <div className="col-1">
-          <p>
-            <span className="hour-minute">{t.format('h:mm')}</span>
-            <span className="second">{t.format('ss')}</span>
-            <span className="ampm">{t.format('a')}</span>
-          </p>
-          <p>
-            <span className="weekday">{t.format('dddd')}</span>
-            <span className="month-day">{t.format('MMMM Do')}</span>
-          </p>
+      <div>
+        <div id="time">
+          <p className="hour-minute">{t.format('h:mm')}</p>
+          <p className="second">{t.format('ss')}</p>
+          <p className="ampm">{t.format('a')}</p>
+        </div>
+        <div id="date">
+          <p>{t.format('dddd, MMMM Do YYYY')}</p>
         </div>
       </div>
     );
