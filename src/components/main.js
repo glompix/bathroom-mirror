@@ -3,6 +3,7 @@
 var Layout = require('./Layout.js');
 var React = require('react');
 var Router = require('react-router');
+require('./textfill.js');
 var Route = Router.Route;
 
 var Routes = (
