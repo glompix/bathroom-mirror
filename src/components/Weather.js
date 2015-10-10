@@ -1,7 +1,7 @@
 'use strict';
 var React = require('react');
 var Skycons = require('react-skycons');
-// var Slick = require('react-slick');
+var Slick = require('react-slick');
 
 
 // Test data
@@ -47,14 +47,27 @@ var Weather = React.createClass({
     }.bind(this));
   },
   render: function () {
+    var settings = {
+      dots: false,
+      infinite: true,
+      speed: 8000,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
     return (
       <div id="weather">
         <p className="current-icon">
           <Skycons color="white" icon={iconName(this.state.current.icon)} />
         </p>
-        <p className="textfill current-summary">Now: {this.state.current.summary}</p>
         <p className="textfill current-temp">{this.state.current.temperature}°</p>
-        <p className="textfill today">{this.state.current.temperature}°</p>
+        <p className="textfill rolling-stats">{this.state.current.temperature}°</p>
+        <p className="textfill rolling-summary">
+          <Slick {...settings}>
+            <div>Now: {this.state.current.summary}</div>
+            <div>Now: {this.state.nextHour.summary}</div>
+            <div>Now: {this.state.nextDay.summary}</div>
+          </Slick>
+        </p>
       </div>
     );
   }

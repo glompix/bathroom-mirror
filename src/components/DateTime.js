@@ -9,9 +9,6 @@ var DateTime = React.createClass({
   componentDidMount: function() {
     this.start();
   },
-  componentDidUpdate: function() {
-    updateFontSizes();
-  },
   start: function() {
     var self = this;
     (function tick() {
@@ -24,12 +21,12 @@ var DateTime = React.createClass({
     return (
       <div id="datetime">
         <div id="time">
-          <div className="textfill hour-minute"><span>{t.format('h:mm')}</span></div>
-          <div className="textfill second"><span>{t.format('ss')}</span></div>
-          <div className="textfill ampm"><span>{t.format('A')}</span></div>
+          <p className="hour-minute">{t.format('h:mm')}</p>
+          <p className="second">{t.format('ss')}</p>
+          <p className="ampm">{t.format('A')}</p>
         </div>
         <div id="date">
-          <div className="textfill"><span>{t.format('dddd, MMMM Do YYYY')}</span></div>
+          <p>{t.format('dddd, MMMM Do YYYY')}</p>
         </div>
       </div>
     );
